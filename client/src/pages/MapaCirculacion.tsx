@@ -69,11 +69,6 @@ const IconTabla = () => (
     <line x1="9" y1="9" x2="9" y2="21" /><line x1="15" y1="9" x2="15" y2="21" />
   </svg>
 )
-const IconMano = () => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M7 11.5V7a2 2 0 0 1 4 0m0 0v4m0-4a2 2 0 0 1 4 0v1m0 0a2 2 0 0 1 4 0v5a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.35-2.5L4 17.5a2 2 0 0 1 3-2.5" />
-  </svg>
-)
 
 function MapController({ dept }: { dept: string }) {
   const map = useMap()
@@ -119,7 +114,7 @@ function PanButton({ panMode, onToggle }: { panMode: boolean; onToggle: () => vo
   onToggleRef.current = onToggle
 
   useEffect(() => {
-    const control = L.control({ position: 'topleft' })
+    const control = (L as unknown as { control: (o: object) => L.Control }).control({ position: 'topleft' })
     control.onAdd = (): HTMLElement => {
       const wrap = L.DomUtil.create('div')
       const btn = L.DomUtil.create('button', 'mcirc__pan-ctrl-btn', wrap) as HTMLButtonElement

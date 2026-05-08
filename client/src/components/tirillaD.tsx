@@ -4,11 +4,10 @@ function LogoItem({ s }: { s: SistemaDemo }) {
   return (
     <a href="#" className="tirilla-d__item" title={s.nombre}>
       <div className="tirilla-d__logo-wrap">
-        {s.logoUrl ? (
-          <img
-            src={s.logoUrl}
-            alt={s.nombre}
+        {s.svgRaw ? (
+          <div
             className="tirilla-d__img"
+            dangerouslySetInnerHTML={{ __html: s.svgRaw }}
           />
         ) : (
           <div className="tirilla-d__placeholder" style={{ backgroundColor: s.color }}>

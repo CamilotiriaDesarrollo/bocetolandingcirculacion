@@ -76,7 +76,7 @@ const EQUIPO = [
   },
 ]
 
-export default function HomeLanding({ onNavClick }: Props) {
+export default function HomeLanding({ onNavClick: _onNavClick }: Props) {
   const [activeMarco, setActiveMarco] = useState(0)
   const [expandedEq, setExpandedEq] = useState<number | null>(null)
 

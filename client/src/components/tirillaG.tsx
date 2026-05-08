@@ -7,8 +7,8 @@ export default function TirillaG({ sistemas }: { sistemas: SistemaDemo[] }) {
         {sistemas.map(s => (
           <a key={s.id} href="#" className="tirilla-g__item" title={s.nombre}>
             <div className="tirilla-g__logo-wrap">
-              {s.logoUrl ? (
-                <img src={s.logoUrl} alt={s.nombre} className="tirilla-g__img" />
+              {s.svgRaw ? (
+                <div className="tirilla-g__img" dangerouslySetInnerHTML={{ __html: s.svgRaw }} />
               ) : (
                 <div className="tirilla-g__placeholder" style={{ backgroundColor: s.color }}>
                   {s.sigla}

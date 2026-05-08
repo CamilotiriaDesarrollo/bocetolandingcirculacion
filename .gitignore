@@ -1,0 +1,37 @@
+# Dependencias
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Builds
+dist/
+client/dist/
+server/dist/
+
+# Variables de entorno
+.env
+.env.local
+.env.*.local
+server/.env
+
+# Caché de Vite
+client/node_modules/.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/settings.json
+.idea/
+
+# Claude Code (archivos locales del asistente IA)
+CLAUDE.md
+.claude/
